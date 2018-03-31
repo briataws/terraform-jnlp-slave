@@ -1,5 +1,6 @@
 # Jenkins jnlp slave with `terraform`
 
+[![Docker Repository on Quay](https://quay.io/repository/mariusv/terraform-jnlp-slave/status "Docker Repository on Quay")](https://quay.io/repository/mariusv/terraform-jnlp-slave)
 
 ### Usage 
 This repository automatically builds containers for using the [`terraform`](https://terraform.io) command line program. It contains the latest `terraform` version.
