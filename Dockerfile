@@ -1,4 +1,4 @@
-FROM jenkins/jnlp-slave:3.16-1-alpine
+FROM jenkins/jnlp-slave:3.27-1-alpine
 
 ENV TERRAFORM_VERSION=0.11.9
 ENV TERRAFORM_SHA256SUM=5d674e7b83945c37f7f14d0e4f655787dad86ba15b26e185604aa0c3812394ab
