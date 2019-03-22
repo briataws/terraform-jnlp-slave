@@ -1,7 +1,7 @@
 FROM jenkins/jnlp-slave:alpine
 
-ENV TERRAFORM_VERSION=0.11.12
-ENV TERRAFORM_SHA256SUM=d3bb9c958c56a178528ef3b18e27a24cfd96c9aa6da3c7b6dc8d7dd8a4b9dab9
+ENV TERRAFORM_VERSION=0.11.13
+ENV TERRAFORM_SHA256SUM=5925cd4d81e7d8f42a0054df2aafd66e2ab7408dbed2bd748f0022cfe592f8d2
 
 USER root
 RUN apk add --update make git curl curl-dev openssh && \
