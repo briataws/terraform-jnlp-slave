@@ -12,15 +12,13 @@ ENV SRC_PATH=/usr/src
 ENV PATH=${SONAR_SCANNER_HOME}/bin:${PATH}
 
 USER root
-RUN apt-get update
-RUN apt-get install -y make git curl wget
-RUN apt-get install -y zip unzip
+RUN apk add --update make git curl curl-dev
+RUN apk add --no-cache zip unzip
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 RUN unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /bin
 RUN rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-RUN apt-get update
-RUN apt-get install -y ruby ruby-bundler libffi-dev ruby-dev python3-pip
-RUN ln -s /usr/bin/pip3 /usr/bin/pip
+RUN apk update
+RUN apk add ruby ruby-bundler libffi-dev ruby-dev build-base py3-pip
 RUN wget -U "scannercli" -q -O /opt/sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip
 RUN pip3 install pylint
 ADD Gemfile .
